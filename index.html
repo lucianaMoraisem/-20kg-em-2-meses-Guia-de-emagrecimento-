@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>-20kg em dois meses: Guia de emagrecimento</title>
   <style>
     body {
@@ -13,84 +12,109 @@
       text-align: center;
       padding: 40px;
     }
-
-    h1 {
-      color: #ff7da5;
-      font-size: 2.2em;
-    }
-
+    h1 { color: #ff7da5; font-size: 2.2em; }
     .container {
       background: #fff;
       border-radius: 15px;
       padding: 30px;
-      max-width: 500px;
+      max-width: 600px;
       margin: 30px auto;
       box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-
-    .price {
-      font-size: 1.5em;
-      color: #ff7da5;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
+    p { font-size: 1.05em; line-height: 1.6; }
+    .price { font-size: 1.3em; color: #ff7da5; font-weight: bold; margin: 12px 0; }
     .pix-box {
-      background-color: #ffeef5;
+      background-color: #fff0f6;
       border-radius: 10px;
       padding: 15px;
-      margin-top: 20px;
+      margin-top: 16px;
       border: 1px solid #ffc2d4;
     }
-
-    button {
+    button, .btn-link {
       background-color: #ff7da5;
       border: none;
       color: white;
-      padding: 15px 25px;
+      padding: 12px 18px;
       border-radius: 10px;
-      font-size: 1em;
+      font-size: 0.95em;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      margin: 6px;
     }
-
-    button:hover {
-      background-color: #ff4d85;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #666;
-    }
+    button:hover, .btn-link:hover { background-color: #ff4d85; }
+    .qr { max-width: 260px; height: auto; margin-top: 12px; border-radius:8px; }
+    .muted { color:#666; font-size:0.9em; margin-top:10px}
+    footer { margin-top: 28px; font-size: 0.9em; color: #666; }
+    .small { font-size:0.95em }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>-20kg em dois meses</h1>
     <h2>Guia de Emagrecimento</h2>
+
     <p>Descubra o passo a passo completo do meu processo de perda de peso!  
-    Dicas reais, cardápios, mindset e estratégias que me ajudaram a eliminar 20kg em apenas 2 meses.</p>
+    dicas reais, cardápios e mindset que me ajudaram a eliminar 20kg.</p>
 
     <p class="price">💰 Apenas R$15,00</p>
 
-    <p>Para adquirir o e-book, envie R$15,00 via PIX e mande o comprovante com seu e-mail para receber o arquivo!</p>
+    <p class="small">paga via PIX — você pode escanear o QR ou usar a opção "pix copiar e colar" no app do banco</p>
 
+    <!-- PIX: QR gerado dinamicamente a partir do payload -->
     <div class="pix-box">
-      <p><b>Chave PIX:</b> <i>(coloca aqui a sua chave PIX)</i></p>
-      <p><b>Envie o comprovante para:</b> <i>(coloca aqui seu e-mail)</i></p>
+      <p><b>PIX (QR/Payload)</b></p>
+
+      <!-- imagem do QR (vai gerar a imagem do QR a partir do payload) -->
+      <img id="pixQr" class="qr" alt="QR Pix" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=00020126580014BR.GOV.BCB.PIX013609aebaae-0901-4793-9983-b37794e4fdcf520400005303986540515.005802BR5924Amanda%20Xavier%20Barbadinho6009SAO%20PAULO62140510b4LznkGPaX63042216" />
+
+      <p class="muted">ou copie o payload e cole na opção "pix - copiar e colar" do app do seu banco.</p>
+
+      <!-- botão que copia o payload (string) pro clipboard -->
+      <div style="margin-top:10px">
+        <button id="copyBtn">copiar payload pro clipboard</button>
+        <a class="btn-link" id="openQr" href="#" target="_blank" rel="noopener">abrir imagem do QR</a>
+      </div>
+
+      <p style="margin-top:10px"><b>payload (pix copiar & colar):</b></p>
+      <textarea id="payload" style="width:95%;height:90px;border-radius:8px;padding:8px;border:1px solid #e3c0d0" readonly>
+00020126580014BR.GOV.BCB.PIX013609aebaae-0901-4793-9983-b37794e4fdcf520400005303986540515.005802BR5924Amanda Xavier Barbadinho6009SAO PAULO62140510b4LznkGPaX63042216
+      </textarea>
+      <p class="muted">dica: no app do banco escolha "pix" → "copiar e colar" → cole essa string → confirme o pagamento.</p>
     </div>
 
-    <button onclick="window.location.href='mailto:SEUEMAILAQUI'">Enviar Comprovante</button>
+    <p style="margin-top:16px">ou se preferir, envie o comprovante por e-mail pra receber o e-book:</p>
+    <button onclick="window.location.href='mailto:seuemail@exemplo.com'">Enviar comprovante</button>
+
+    <p class="muted" style="margin-top:10px">obs: se quiser eu troco esse botão pelo link do Nubank/mercadopago/etc (se você me passar o link).</p>
   </div>
 
   <footer>
     <p>© 2025 - Criado por Nanda 💕 | Todos os direitos reservados.</p>
   </footer>
+
+<script>
+  // payload que você enviou (já preenchido no textarea)
+  const payload = `00020126580014BR.GOV.BCB.PIX013609aebaae-0901-4793-9983-b37794e4fdcf520400005303986540515.005802BR5924Amanda Xavier Barbadinho6009SAO PAULO62140510b4LznkGPaX63042216`.trim();
+
+  // copiar pro clipboard
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(payload);
+      alert('payload copiado! agora abra o app do banco e use a opção "pix - copiar e colar" e cole o texto.');
+    } catch (e) {
+      // fallback
+      const ta = document.getElementById('payload');
+      ta.select();
+      document.execCommand('copy');
+      alert('copiado! se não funcionar, selecione e copie manualmente o texto acima.');
+    }
+  });
+
+  // abrir a imagem do QR em nova aba (link já gerado)
+  const qrImg = document.getElementById('pixQr').src;
+  document.getElementById('openQr').href = qrImg;
+</script>
 </body>
 </html>
