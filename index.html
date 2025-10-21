@@ -66,12 +66,10 @@
     <div class="pix-box">
       <p><b>PIX (QR/Payload)</b></p>
 
-      <!-- imagem do QR (vai gerar a imagem do QR a partir do payload) -->
       <img id="pixQr" class="qr" alt="QR Pix" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=00020126580014BR.GOV.BCB.PIX013609aebaae-0901-4793-9983-b37794e4fdcf520400005303986540515.005802BR5924Amanda%20Xavier%20Barbadinho6009SAO%20PAULO62140510b4LznkGPaX63042216" />
 
       <p class="muted">ou copie o payload e cole na opção "pix - copiar e colar" do app do seu banco.</p>
 
-      <!-- botão que copia o payload (string) pro clipboard -->
       <div style="margin-top:10px">
         <button id="copyBtn">copiar payload pro clipboard</button>
         <a class="btn-link" id="openQr" href="#" target="_blank" rel="noopener">abrir imagem do QR</a>
@@ -84,10 +82,12 @@
       <p class="muted">dica: no app do banco escolha "pix" → "copiar e colar" → cole essa string → confirme o pagamento.</p>
     </div>
 
-    <p style="margin-top:16px">ou se preferir, envie o comprovante por e-mail pra receber o e-book:</p>
-    <button onclick="window.location.href='mailto:seuemail@exemplo.com'">Enviar comprovante</button>
+    <!-- NOVO BOTÃO DE PAGAMENTO DIRETO -->
+    <p style="margin-top:20px">ou pague direto via Nubank (link seguro):</p>
+    <a class="btn-link" href="https://nubank.com.br/cobrar/q51nn/68f7fd62-1842-4fc6-a476-5a22191b0449" target="_blank" rel="noopener">comprar agora R$15</a>
 
-    <p class="muted" style="margin-top:10px">obs: se quiser eu troco esse botão pelo link do Nubank/mercadopago/etc (se você me passar o link).</p>
+    <p style="margin-top:16px">ou se preferir, envie o comprovante por e-mail para receber o e-book:</p>
+    <button onclick="window.location.href='mailto:seuemail@exemplo.com'">Enviar comprovante</button>
   </div>
 
   <footer>
@@ -95,16 +95,13 @@
   </footer>
 
 <script>
-  // payload que você enviou (já preenchido no textarea)
   const payload = `00020126580014BR.GOV.BCB.PIX013609aebaae-0901-4793-9983-b37794e4fdcf520400005303986540515.005802BR5924Amanda Xavier Barbadinho6009SAO PAULO62140510b4LznkGPaX63042216`.trim();
 
-  // copiar pro clipboard
   document.getElementById('copyBtn').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(payload);
       alert('payload copiado! agora abra o app do banco e use a opção "pix - copiar e colar" e cole o texto.');
     } catch (e) {
-      // fallback
       const ta = document.getElementById('payload');
       ta.select();
       document.execCommand('copy');
@@ -112,7 +109,6 @@
     }
   });
 
-  // abrir a imagem do QR em nova aba (link já gerado)
   const qrImg = document.getElementById('pixQr').src;
   document.getElementById('openQr').href = qrImg;
 </script>
