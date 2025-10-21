@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>-20kg em dois meses: Guia de emagrecimento</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #ffeef5;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #ff7da5;
+      font-size: 2.2em;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 500px;
+      margin: 30px auto;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 1.5em;
+      color: #ff7da5;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .pix-box {
+      background-color: #ffeef5;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
+      border: 1px solid #ffc2d4;
+    }
+
+    button {
+      background-color: #ff7da5;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4d85;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>-20kg em dois meses</h1>
+    <h2>Guia de Emagrecimento</h2>
+    <p>Descubra o passo a passo completo do meu processo de perda de peso!  
+    Dicas reais, cardápios, mindset e estratégias que me ajudaram a eliminar 20kg em apenas 2 meses.</p>
+
+    <p class="price">💰 Apenas R$15,00</p>
+
+    <p>Para adquirir o e-book, envie R$15,00 via PIX e mande o comprovante com seu e-mail para receber o arquivo!</p>
+
+    <div class="pix-box">
+      <p><b>Chave PIX:</b> <i>(coloca aqui a sua chave PIX)</i></p>
+      <p><b>Envie o comprovante para:</b> <i>(coloca aqui seu e-mail)</i></p>
+    </div>
+
+    <button onclick="window.location.href='mailto:SEUEMAILAQUI'">Enviar Comprovante</button>
+  </div>
+
+  <footer>
+    <p>© 2025 - Criado por Nanda 💕 | Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
